@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="page" extends="json-default" namespace="/">
+	
+	  	<action name="Login*" class="com.nkl.page.action.LoginAction" method="{1}">
+	  		<result name="success" type="json">
+	  			<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">
+					success,data.*
+				</param>
+            </result>
+            <result name="error" type="json">
+            	<param name="ignoreHierarchy">false</param>
+			    <param name="includeProperties">
+					success,err.*
+				</param>
+			</result>
+	  	</action>
+	  	
+	  	<action name="page_*" class="com.nkl.page.action.IndexAction" method="{1}">
+	  		<result name="error">Error.jsp</result> 
+	  		<result name="reg">reg.jsp</result>
+	  		<result name="index">default.jsp</result>
+	  		<result name="task">task.jsp</result>
+	  		<result name="taskDetail">taskDetail.jsp</result>
+	  		<result name="raceAdd">raceAdd.jsp</result>
+	  		<result name="info">info.jsp</result>
+	  		<result name="infoDetail">infoDetail.jsp</result>
+	  		<result name="lost">lost.jsp</result>
+	  		<result name="lostDetail">lostDetail.jsp</result>
+	  		<result name="exper">exper.jsp</result>
+	  		<result name="experDetail">experDetail.jsp</result>
+	  		<result name="sblog">sblog.jsp</result>
+	  		<result name="success" type="json">
+	  			<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">
+					success,data.*
+				</param>
+            </result>
+            <result name="error2" type="json">
+            	<param name="ignoreHierarchy">false</param>
+			    <param name="includeProperties">
+					success,err.*
+				</param>
+			</result>
+			<result name="userInfo">myInfo.jsp</result>
+	  		<result name="userPwd">myPwd.jsp</result>
+	  		<result name="taskShow">taskShow.jsp</result>
+	  		<result name="taskMyDetail">taskMyDetail.jsp</result>
+	  		<result name="taskEdit">taskEdit.jsp</result>
+	  		<result name="raceShow">raceShow.jsp</result>
+	  		<result name="raceScoreEdit">raceScoreEdit.jsp</result>
+	  		<result name="myRaceShow">myRaceShow.jsp</result>
+	  		<result name="lostShow">lostShow.jsp</result>
+	  		<result name="lostEdit">lostEdit.jsp</result>
+	  		<result name="lostMyDetail">lostMyDetail.jsp</result>
+	  		<result name="experShow">experShow.jsp</result>
+	  		<result name="experEdit">experEdit.jsp</result>
+	  	</action>
+	  	 
+	  	<action name="UploadImg" class="com.nkl.page.action.UploadImgAction"> 	    
+	  		<param name="savePath">images/task</param>	  
+	  		<param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/x-png,image/pjpeg</param>
+	  		<param name="maximunSize">52428800</param>	    
+	  		<result name="success">uploadImg.jsp</result>
+	  		<result name="input">uploadImg.jsp</result>
+	  	</action>
+	  	
+	</package>
+</struts>    
